@@ -17,7 +17,7 @@
     <!---select2-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/css/select2.min.css" rel="stylesheet" />
     <link href='{{ asset("css/theme.min.css") }}' rel="stylesheet" type='text/css'>
-    
+     <link href='{{ asset("css/style.css") }}' rel="stylesheet" type='text/css'>
     <style>
         body {
             font-family: 'Lato';

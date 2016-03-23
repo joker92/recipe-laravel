@@ -1,11 +1,14 @@
        @extends('layouts.app')
         @section('content')
-
+<div>
+    <img src="http://www.ricettedoro.com/wp-content/themes/ricette/images/logo_ricette.png">
+    
+</div>
                     <div class="media-body">
-            		<h4 class="media-heading">{{ $recipe->title}}</h4>
+            		<h1 class="media-heading">{{ $recipe->title}}</h1>
                       <p class="text-center">{{ $recipe->description }}</p>
-                      <p>ingredienti :</p>
-                      
+                      <p><h1>ingredienti :</p></h1>
+                     
                       <ul>
                       @foreach($recipe->ingredients as $ingredient)
                       <li>{{$ingredient->name}}</li>
