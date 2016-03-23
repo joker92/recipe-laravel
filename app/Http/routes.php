@@ -34,6 +34,7 @@ Route::get('/recipe',['as'=>'recipe.index','uses'=> 'ControllerRecipe@index']);
     
 });
 
+
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
@@ -41,18 +42,21 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 Route::group(['middleware' => ['web','auth']], function () {
-    //crea ricetta
-Route::get('/recipe/create',['as'=>'recipe.create','uses'=> 'ControllerRecipe@create']);   
-
-Route::post('/recipe',['as'=>'recipe.store','uses'=> 'ControllerRecipe@store']);     
-    //modifica ricetta
-    //questa le visualizza singola ricetta
-Route::get('/recipe/{id}',['as'=>'recipe.show','uses'=> 'ControllerRecipe@show']);  
-//questa prende le modifiche
-Route::get('/recipe/{id}/edit',['as'=>'recipe.edit','uses'=> 'ControllerRecipe@edit']);
-//rotta per laggirnamento
-Route::put('/recipe/{id}',['as'=>'recipe.update','uses'=> 'ControllerRecipe@update']);  
-    //cancella ricetta
-Route::delete('/recipe/{id}/delete', array('as'=>'recipe.destroy','uses'=>'ControllerRecipe@destroy'));
-Route::post('/recipe/search', ['as'=>'search', 'uses' =>'ControllerRecipe@search' ]);
+    Route::get('/',function(){
+        return redirect()->route('recipe.index');
     });
+    //crea ricetta
+    Route::get('/recipe/create',['as'=>'recipe.create','uses'=> 'ControllerRecipe@create']);   
+    
+    Route::post('/recipe',['as'=>'recipe.store','uses'=> 'ControllerRecipe@store']);     
+        //modifica ricetta
+        //questa le visualizza singola ricetta
+    Route::get('/recipe/{id}',['as'=>'recipe.show','uses'=> 'ControllerRecipe@show']);  
+    //questa prende le modifiche
+    Route::get('/recipe/{id}/edit',['as'=>'recipe.edit','uses'=> 'ControllerRecipe@edit']);
+    //rotta per laggirnamento
+    Route::put('/recipe/{id}',['as'=>'recipe.update','uses'=> 'ControllerRecipe@update']);  
+        //cancella ricetta
+    Route::delete('/recipe/{id}/delete', array('as'=>'recipe.destroy','uses'=>'ControllerRecipe@destroy'));
+    Route::post('/recipe/search', ['as'=>'search', 'uses' =>'ControllerRecipe@search' ]);
+});

@@ -13,9 +13,9 @@ class ControllerRecipe extends Controller
 
 {
     public function search(Request $request){
-        //dd($request->search);
         $recipe = Recipe::where('title','like','%'.$request->search.'%')->get();
-        return view('recipe/results',compact('recipe'));
+        $user = User::where('name','like','%'.$request->search.'%')->get();
+        return view('recipe/results',compact('recipe','user'));
     }
     /**
      * Display a listing of the resource.
