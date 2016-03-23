@@ -24,7 +24,7 @@ class ControllerRecipe extends Controller
      */
     public function index()
     {
-        $recipe=Recipe::orderBy('created_at','DESC')->paginate(8);
+        $recipe=Recipe::orderBy('created_at','DESC')->paginate(2);
          return view ('recipe.index',compact('recipe'));
     }
 
