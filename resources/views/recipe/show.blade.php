@@ -5,7 +5,7 @@
     
 </div>
                     <div class="media-body">
-            		<h1 class="media-heading">{{ $recipe->title}}</h1>
+            		<h1 class="media-heading"><center>{{ $recipe->title}}</center></h1><br />
                       <p class="text-center">{{ $recipe->description }}</p>
                       <p><h1>ingredienti :</p></h1>
                      
