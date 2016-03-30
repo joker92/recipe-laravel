@@ -26,13 +26,7 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //visaulizza tutte le ricette
 
-Route::get('/recipe',['as'=>'recipe.index','uses'=> 'ControllerRecipe@index']);   
-    //visaulizza singola ricetta
-    
-});
 
 
 Route::group(['middleware' => 'web'], function () {
@@ -45,6 +39,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/',function(){
         return redirect()->route('recipe.index');
     });
+    Route::get('/recipe',['as'=>'recipe.index','uses'=> 'ControllerRecipe@index']);
     //crea ricetta
     Route::get('/recipe/create',['as'=>'recipe.create','uses'=> 'ControllerRecipe@create']);   
     

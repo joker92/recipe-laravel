@@ -13,7 +13,7 @@
  <img src="http://www.daringtodo.com/wp-content/uploads/2015/11/master-chef-logo.jpg">
  
 <a class="btn btn-default" href="recipe/{{$ricetta->id}}">Visualizza</a>
-@if(Auth::user()->id == $ricetta->user->id)
+@if(Auth::user()->id == $ricetta->user->id || Auth::user()->admin == 1)
     <a class="btn btn-default" href="recipe/{{$ricetta->id}}/edit">Modifica</a>
 @else
     <a class="btn btn-default" disabled>Modifica</a>
