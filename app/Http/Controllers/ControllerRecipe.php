@@ -137,6 +137,10 @@ class ControllerRecipe extends Controller
     //dd($request->all());
    
         $recipe->ingredients()->sync($ingredients);
+        $file = $request->file('image');
+              $ext = $file->getClientOriginalExtension();
+              $imageName = $recipe->id . '.' . $ext;
+              $file->move(base_path() . '/public/images/recipe/', $imageName);
         Session()->flash('flash_message', 'Aggiornato correttamente');
         return redirect()->back();
     }

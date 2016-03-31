@@ -7,7 +7,8 @@
     
         {!! Form::model($recipe, [
     'method' => 'PUT',
-    'route' => ['recipe.update', $recipe->id]
+    'route' => ['recipe.update', $recipe->id],
+    'files'=>true
 ]) !!}
     <div class="form-group">
     {!! Form::label('title', 'Titolo :') !!}
@@ -24,11 +25,20 @@
 
 </div>
 
+    <div class="col-md-6">
+        <div class="form-group">
+    {!! Form::label('Immagine') !!}
+    {!! Form::file('image', null) !!}
+</div>
+    </div>
+
     <div class="form-group">
     {!! Form::submit('Modify repice ', ['class' => 'btn btn-primary form-control']) !!}
     
     
     </div>
+    
+    
     
     {!! Form::close() !!}
    {!! Form::open([
