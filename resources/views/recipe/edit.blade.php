@@ -2,9 +2,8 @@
 @section('content')
 
 
- <h1> edit RECIPES!!</h1>
-        <p>modifica RICHETTONE </p>
-        <p><b>Modifica  RICETTE</b></p>
+ 
+        <p><b><center>Modifica  Ricette D'oro</center></b></p>
     
         {!! Form::model($recipe, [
     'method' => 'PUT',
@@ -13,13 +12,13 @@
     <div class="form-group">
     {!! Form::label('title', 'Titolo :') !!}
     {!! Form::input('text', 'title', null, ['class' => 'form-control']) !!}
-    {!! Form::label('description', 'Text ') !!}
+    {!! Form::label('description', 'Ricettario : ') !!}
     {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
     </div>
    
     <div class="form-group">
    
-    {!! Form::label('ingredient_list', 'Ingredienti:', ['class' =>'control-label']) !!}
+    {!! Form::label('ingredient_list', 'Ingredienti :', ['class' =>'control-label']) !!}
 
     {!! Form::select('ingredient_list[]', $ingredients, null, ['id' => 'ingredient_list', 'class' => 'form-control', 'multiple']) !!}
 
@@ -48,7 +47,7 @@
   $('#ingredient_list').select2({
        placeholder: 'Scegliere o aggiungere gli ingredienti' ,
        tags: true,
-       tokenSeparators: [",", " "],
+       tokenSeparators: [","],
         createTag: function(newIngredient) {
        return {
            id: 'new:' + newIngredient.term,

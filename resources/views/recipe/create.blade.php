@@ -3,10 +3,9 @@
 
 
  <h1>NEW RECIPES!!</h1>
-        <p>BENVENUTO SU RICHETTONE </p>
-        <p><b>LE MIGLIORI RICETTE</b></p>
+      
     
-    {!! Form::open(['route' => 'recipe.store', ],['class'=>'form-horizontal',]) !!}
+    {!! Form::open(['route' => 'recipe.store','files'=>true ],['class'=>'form-horizontal',]) !!}
     <div class="form-group">
     {!! Form::label('title', 'Titolo :') !!}
     {!! Form::input('text', 'title', null, ['class' => 'form-control']) !!}
@@ -22,10 +21,20 @@
 
 </div>
 
+    <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+    {!! Form::label('Immagine') !!}
+    {!! Form::file('image', null) !!}
+</div>
+    </div>
+
+
+
     <div class="form-group">
     {!! Form::submit('Aggiungi repice ', ['class' => 'btn btn-primary form-control']) !!}
     </div>
-    
+
     {!! Form::close() !!}
     @endsection
     @section('footer')
@@ -34,7 +43,7 @@
   $('#ingredient_list').select2({
        placeholder: 'Scegliere o aggiungere gli ingredienti' ,
        tags: true,
-       tokenSeparators: [",", " "],
+       tokenSeparators: [","],
         createTag: function(newIngredient) {
        return {
            id: 'new:' + newIngredient.term,

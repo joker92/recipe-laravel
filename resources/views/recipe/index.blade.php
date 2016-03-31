@@ -10,7 +10,8 @@
     <div class="col-md-4" id="box">
            
 <h1><center>{{$ricetta->title}}:<br /></h1></center>
- <img src="http://www.daringtodo.com/wp-content/uploads/2015/11/master-chef-logo.jpg">
+ <img src="images/recipe/{{$ricetta->id}}.jpg">
+ 
  
 <a class="btn btn-default" href="recipe/{{$ricetta->id}}">Visualizza</a>
 @if(Auth::user()->id == $ricetta->user->id || Auth::user()->admin == 1)

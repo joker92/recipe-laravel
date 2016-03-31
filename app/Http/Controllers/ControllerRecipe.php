@@ -70,6 +70,10 @@ class ControllerRecipe extends Controller
               $recipe = Auth::user()->recipe()->create($request->all());
          
               $recipe->ingredients()->attach($ingredients);
+              $file = $request->file('image');
+              $ext = $file->getClientOriginalExtension();
+              $imageName = $recipe->id . '.' . $ext;
+              $file->move(base_path() . '/public/images/recipe/', $imageName);
               
               return redirect()->route('recipe.index');
     }
