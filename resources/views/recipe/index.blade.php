@@ -12,15 +12,16 @@
 <h1><center>{{$ricetta->title}}:<br /></h1></center>
  <img src="images/recipe/{{$ricetta->id}}.jpg">
  
- 
+ <br />
+Ricetta inserita da: {{$ricetta->user->name}}
+
 <a class="btn btn-default" href="recipe/{{$ricetta->id}}">Visualizza</a>
 @if(Auth::user()->id == $ricetta->user->id || Auth::user()->admin == 1)
     <a class="btn btn-default" href="recipe/{{$ricetta->id}}/edit">Modifica</a>
 @else
     <a class="btn btn-default" disabled>Modifica</a>
 @endif
-<br />
-Ricetta inserita da: {{$ricetta->user->name}}
+
 </div>
 @endforeach
 
@@ -33,4 +34,7 @@ Ricetta inserita da: {{$ricetta->user->name}}
 <!-- barra per scorrere le pagine -->
 
 {!! $recipe->render() !!}
+
+
+
 @endsection

@@ -5,8 +5,10 @@
     
 </div>
                     <div class="media-body">
+                       
             		<h1 class="media-heading"><center>{{ $recipe->title}}</center></h1><br />
                       <p class="text-center">{{ $recipe->description }}</p>
+                      <img src="/images/recipe/{{$recipe->id}}.jpg">
                       <p><h1>ingredienti :</p></h1>
                      
                       <ul>

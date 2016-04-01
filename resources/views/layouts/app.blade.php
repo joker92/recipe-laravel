@@ -99,5 +99,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     @yield('footer')
+    <div id="footer"><!--inizia footer-->
+<p>copyright &copy; Ricette D'Oro. Tutti i diritti riservati designed by <a href="mailto:giu.tar@gmail.com" target="_blank" title="invia email a giuseppe">giuseppe</a></p>
+</div><!--end foooter-->
 </body>
 </html>
